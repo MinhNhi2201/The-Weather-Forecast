@@ -37,9 +37,11 @@ form.addEventListener("submit", e => {
 
 // 
 function showData() {
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=a564495e295147d9ba131029230802&q=${cityInput}&days=10&aqi=yes&alerts=no`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=a564495e295147d9ba131029230802&q=${cityInput}&days=10&aqi=yes&alerts=no`)
         .then(res => res.json())
         .then(datas => {
+
+            // Show current weather
             img_icon.src = `${datas.current.condition.icon}`;
             condition.innerHTML = `${datas.current.condition.text}`;
             temp.innerHTML = `${datas.current.temp_c}&deg`
@@ -51,7 +53,7 @@ function showData() {
             sunrise.innerHTML = `${datas.forecast.forecastday[0].astro.sunrise}`;
             sunset.innerHTML = `${datas.forecast.forecastday[0].astro.sunset}`;
 
-            // Hourly 
+            // Show daily weather
             const daily1 = document.querySelector("#daily1");
             const daily2 = document.querySelector("#daily2")
             const daily3 = document.querySelector("#daily3")
@@ -82,7 +84,7 @@ function showData() {
             temp2_3.innerHTML = `${datas.forecast.forecastday[3].day.maxtemp_c}` + "&deg C";
             temp2_4.innerHTML = `${datas.forecast.forecastday[4].day.maxtemp_c}` + "&deg C";
 
-            // Background
+            // Set background
             let dayortime = "day"
             const code = `${datas.current.condition.code}`;
             if (datas.current.is_day == false) {
