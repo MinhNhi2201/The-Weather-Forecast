@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="/images/icons8-weather-64.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>The Weather</title>
+  </head>
+  <body>
+    <div class="weather-app">
+      <div class="container">
+        <form id="cityInput">
+          <input
+            type="text"
+            id="search"
+            class="search"
+            placeholder="Your City... "
+          />
+          <button type="submit" id="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+
+        <div class="body">
+          <div class="weather-detail">
+            <p class="condition-icon">
+              <img id="icon" src="" alt="" />
+              <span id="condition"></span>
+            </p>
+            <p id="temp"></p>
+            <h1 id="city"></h1>
+            <p id="date"></p>
+            <div class="sun">
+              <img
+                src="./images/icons8-sunrise-64.png"
+                alt=""
+                id="img_sunrise"
+              />
+              <img src="./images/icons8-sunset-64.png" alt="" id="img_sunset" />
+              <p id="sunrise"></p>
+              <p id="sunset"></p>
+            </div>
+
+            <ul class="detail">
+              <li>
+                <span>Cloud</span>
+                <span id="cloud"></span>
+              </li>
+              <li>
+                <span>Humidity</span>
+                <span id="humidity"> </span>
+              </li>
+              <li>
+                <span>Wind</span>
+                <span id="wind"></span>
+              </li>
+            </ul>
+          </div>
+          <div class="weather-hourly">
+            <ul>
+              <li>
+                <p id="daily1"></p>
+                <img id="icon2_1" src="/" alt="" srcset="" />
+                <p id="temp2_1"><span></span></p>
+              </li>
+              <li>
+                <p id="daily2"></p>
+                <img id="icon2_2" src="" alt="" srcset="" />
+
+                <p id="temp2_2"></p>
+              </li>
+              <li>
+                <p id="daily3"></p>
+                <img id="icon2_3" src="" alt="" srcset="" />
+                <p id="temp2_3"></p>
+              </li>
+              <li>
+                <p id="daily4"></p>
+                <img id="icon2_4" src="" alt="" srcset="" />
+                <p id="temp2_4"></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>

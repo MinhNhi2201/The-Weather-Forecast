@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+body,
+html {
+  font-family: "Quicksand", sans-serif;
+  font-size: 22px;
+  color: #fff;
+}
+
+.weather-app {
+  min-height: 100vh;
+  background-image: url("./images/night/rainy.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  transition: 500ms;
+  overflow-y: hidden;
+}
+/************************************Form************************************/
+
+form {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+}
+form input {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  transition: 0.4s;
+  padding: 0.7rem;
+  margin: 0;
+  border: 2px solid black;
+  color: #fff;
+  background: cyan;
+}
+
+.search {
+  background: none;
+  border-radius: 25px 0 0 25px;
+}
+form button {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  transition: 0.4s;
+  padding: 0.7rem;
+  margin: 0;
+  border-radius: 0 25px 25px 0px;
+  cursor: pointer;
+  left: -6px;
+  transition: 0.4s;
+  color: #b8b6b6;
+  background: #000;
+}
+form button:hover {
+  background: #ffffff;
+  color: #000;
+}
+/************************************BODY************************************/
+/******** WEATHER DETAIL ********/
+.body {
+  background-color: rgba(110, 110, 110, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 1rem;
+  padding-bottom: 0;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+}
+
+.condition-icon {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+#temp,
+#city {
+  font-size: 70px;
+  margin: 0.8rem;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.9rem;
+  margin: 1rem;
+}
+.detail li {
+  padding: 0.3rem;
+}
+#img_sunrise {
+  grid-area: g1;
+}
+#img_sunset {
+  grid-area: g2;
+}
+#sunrise {
+  grid-area: g3;
+}
+#sunset {
+  grid-area: g4;
+}
+.sun {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-areas:
+    "g1 g2"
+    "g3 g4";
+  justify-content: center;
+  grid-column-gap: 3rem;
+  grid-row-gap: 0.5rem;
+}
+/******** WEATHER HOURLY ********/
+.weather-hourly {
+  background: #fff;
+  color: #000;
+  margin: 1rem -1rem;
+  margin-bottom: 0;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.weather-hourly ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.weather-hourly ul li {
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.weather-hourly ul li:hover {
+  background: #9e9c9c;
+}
+.condition2 {
+  font-size: 18px;
+  margin: 0.5rem;
+}
+
+/*  */
+@media screen and (max-width: 500px) {
+  form input {
+    font-size: 10px;
+    width: 65%;
+  }
+
+  form button {
+    font-size: 10px;
+    width: 30%;
+    left: -6px;
+  }
+  form {
+    margin-top: 2.5rem !important;
+  }
+  #temp,
+  #location {
+    font-size: 30px;
+    margin: 0.8rem;
+  }
+  body,
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 700px) {
+  form input {
+    font-size: 20px;
+    width: 65%;
+  }
+
+  form button {
+    font-size: 20px;
+    width: 30%;
+    left: -6px;
+  }
+  form {
+    margin-top: 2.5rem !important;
+  }
+  #temp,
+  #location {
+    font-size: 33px;
+    margin: 1rem;
+  }
+  body,
+  html {
+    font-size: 15px;
+  }
+}
